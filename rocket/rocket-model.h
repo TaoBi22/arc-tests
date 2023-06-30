@@ -80,3 +80,4 @@ public:
 
 std::unique_ptr<RocketModel> makeArcilatorModel();
 std::unique_ptr<RocketModel> makeVerilatorModel();
+std::unique_ptr<RocketModel> makeCXXRTLModel();

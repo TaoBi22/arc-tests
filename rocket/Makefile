@@ -18,6 +18,9 @@ BUILD_MODEL ?= $(BUILD_DIR)/rocket
 ARCILATOR_ARGS ?= --mlir-timing --print-debug-info
 VERILATOR_ARGS ?= -DPRINTF_COND=0 -DASSERT_VERBOSE_COND=0 -DSTOP_COND=0
 
+YOSYS = yosys
+YOSYS_INCLUDE = $(shell yosys-config --datdir)/include
+
 TRACE ?= 1
 
 ifeq ($(TRACE),1)
@@ -63,6 +66,20 @@ $(BUILD_MODEL)-vtor.a $(BUILD_MODEL)-vtor.h: $(BUILD_MODEL).sv $(REPO_ROOT)/veri
 	cp $(BUILD_MODEL)-vtor/Vrocket.h $(BUILD_MODEL)-vtor.h
 
 #===-------------------------------------------------------------------------===
+# yosys-CXXRTL
+#===-------------------------------------------------------------------------===
+
+$(BUILD_MODEL)-cxxrtl.sv: $(BUILD_MODEL).mlir
+	firtool --dedup --lowering-options=disallowLocalVariables,disallowPackedArrays $< -o $@
+
+$(BUILD_MODEL)-cxxrtl.cpp: $(BUILD_MODEL)-cxxrtl.sv
+	$(YOSYS) -p "read_verilog -sv $<; read_verilog -sv $(REPO_ROOT)/plusarg_reader.v; write_cxxrtl $@"
+
+# Hack because CXXRTL escapes underscores with underscores
+$(BUILD_MODEL)-cxxrtl-ports.def: $(SOURCE_DIR)/ports.def
+	sed -e 's/_/__/g' -e 's/PORT(/PORT(p_/g' $< > $@ 
+
+#===-------------------------------------------------------------------------===
 # Testbench
 #===-------------------------------------------------------------------------===
 
@@ -72,7 +89,10 @@ $(BUILD_MODEL)-model-arc.o: $(SOURCE_MODEL)-model-arc.cpp $(SOURCE_MODEL)-model.
 $(BUILD_MODEL)-model-vtor.o: $(SOURCE_MODEL)-model-vtor.cpp $(SOURCE_MODEL)-model.h $(BUILD_MODEL)-vtor.h
 	$(CXX) $(CXXFLAGS) -I$(ARCILATOR_UTILS_ROOT)/ -I$(BUILD_DIR) -I/$(VERILATOR_ROOT)/include -c $< -o $@
 
-$(BUILD_MODEL)-main: $(SOURCE_MODEL)-main.cpp $(BUILD_MODEL)-model-arc.o $(BUILD_MODEL)-arc.o $(BUILD_MODEL)-model-vtor.o $(BUILD_MODEL)-vtor.a $(VERILATOR_ROOT)/include/verilated.cpp $(VERILATOR_ROOT)/include/verilated_vcd_c.cpp $(VERILATOR_ROOT)/include/verilated_threads.cpp
+$(BUILD_MODEL)-model-cxxrtl.o: $(SOURCE_MODEL)-model-cxxrtl.cpp $(BUILD_MODEL)-cxxrtl.cpp $(BUILD_MODEL)-cxxrtl-ports.def
+	$(CXX) $(CXXFLAGS) -I$(ARCILATOR_UTILS_ROOT)/ -I$(BUILD_DIR) -I$(YOSYS_INCLUDE) -c $< -o $@
+
+$(BUILD_MODEL)-main: $(SOURCE_MODEL)-main.cpp $(BUILD_MODEL)-model-arc.o $(BUILD_MODEL)-arc.o $(BUILD_MODEL)-model-vtor.o $(BUILD_MODEL)-vtor.a $(VERILATOR_ROOT)/include/verilated.cpp $(VERILATOR_ROOT)/include/verilated_vcd_c.cpp $(VERILATOR_ROOT)/include/verilated_threads.cpp $(BUILD_MODEL)-model-cxxrtl.o
 	$(CXX) $(CXXFLAGS) -g -I$(REPO_ROOT)/elfio $^ -o $@
 
 #===-------------------------------------------------------------------------===
@@ -86,5 +106,7 @@ run-arcs: RUN_ARGS += --arcs
 run-arcs: run
 run-vtor: RUN_ARGS += --vtor
 run-vtor: run
+run-cxxrtl: RUN_ARGS += --cxxrtl
+run-cxxrtl: run 
 run-trace: RUN_ARGS += --trace $(BUILD_MODEL).vcd
 run-trace: run

@@ -202,6 +202,7 @@ int main(int argc, char **argv) {
   bool optRunAll = true;
   bool optRunArcs = false;
   bool optRunVtor = false;
+  bool optRunCXXRTL = false;
   char *optVcdOutputFile = nullptr;
 
   char **argOut = argv + 1;
@@ -214,6 +215,11 @@ int main(int argc, char **argv) {
     if (strcmp(*arg, "--vtor") == 0) {
       optRunAll = false;
       optRunVtor = true;
+      continue;
+    }
+    if (strcmp(*arg, "--cxxrtl") == 0) {
+      optRunAll = false;
+      optRunCXXRTL = true;
       continue;
     }
     if (strcmp(*arg, "--trace") == 0) {
@@ -234,6 +240,7 @@ int main(int argc, char **argv) {
     std::cerr << "options:\n";
     std::cerr << "  --arcs         run arcilator simulation\n";
     std::cerr << "  --vtor         run verilator simulation\n";
+    std::cerr << "  --cxxrtl       run CXXRTL simulation\n";
     std::cerr << "  --trace <VCD>  write trace to <VCD> file\n";
     return 1;
   }
@@ -278,6 +285,8 @@ int main(int argc, char **argv) {
     model.models.push_back(makeVerilatorModel());
   if (optRunAll || optRunArcs)
     model.models.push_back(makeArcilatorModel());
+  if (optRunAll || optRunCXXRTL)
+    model.models.push_back(makeCXXRTLModel());
   if (optVcdOutputFile)
     model.vcd_start(optVcdOutputFile);
 
