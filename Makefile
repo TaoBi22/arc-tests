@@ -32,7 +32,9 @@ $(MODEL).h: $(MODEL).json
 	python $(ARCILATOR_UTILS_ROOT)/arcilator-header-cpp.py $< > $@
 
 $(MODEL).sv: $(MODEL).fir
-	firtool --lowering-options=disallowLocalVariables,disallowPackedArrays --verilog --dedup=1 $< -o $@
+	firtool --verilog --dedup=1 $< -o $@
+	cat $(mkfile_path)/EICG_wrapper.v >> $(MODEL).sv
+	cat $(mkfile_path)/plusarg_reader.v >> $(MODEL).sv
 
 $(MODEL)-main: $(mkfile_path)/$(MODEL)/$(MODEL)-main.cpp $(MODEL).h $(MODEL).o
 	$(CXX) $(CXXFLAGS) -I$(ARCILATOR_UTILS_ROOT)/ -I$(mkfile_path)/elfio/ -I. $^ -o $@
