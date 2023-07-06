@@ -90,7 +90,7 @@ $(BUILD_MODEL)-model-vtor.o: $(SOURCE_MODEL)-model-vtor.cpp $(SOURCE_MODEL)-mode
 	$(CXX) $(CXXFLAGS) -I$(ARCILATOR_UTILS_ROOT)/ -I$(BUILD_DIR) -I/$(VERILATOR_ROOT)/include -c $< -o $@
 
 $(BUILD_MODEL)-model-cxxrtl.o: $(SOURCE_MODEL)-model-cxxrtl.cpp $(BUILD_MODEL)-cxxrtl.cpp $(BUILD_MODEL)-cxxrtl-ports.def
-	$(CXX) $(CXXFLAGS) -O0 -fbracket-depth=1024 -fuse-ld=lld -I$(ARCILATOR_UTILS_ROOT)/ -I$(BUILD_DIR) -I$(YOSYS_INCLUDE) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -I$(ARCILATOR_UTILS_ROOT)/ -I$(BUILD_DIR) -I$(YOSYS_INCLUDE) -c $< -o $@
 
 $(BUILD_MODEL)-main: $(SOURCE_MODEL)-main.cpp $(BUILD_MODEL)-model-arc.o $(BUILD_MODEL)-arc.o $(BUILD_MODEL)-model-vtor.o $(BUILD_MODEL)-vtor.a $(VERILATOR_ROOT)/include/verilated.cpp $(VERILATOR_ROOT)/include/verilated_vcd_c.cpp $(VERILATOR_ROOT)/include/verilated_threads.cpp $(BUILD_MODEL)-model-cxxrtl.o
 	$(CXX) $(CXXFLAGS) -g -I$(REPO_ROOT)/elfio $^ -o $@
