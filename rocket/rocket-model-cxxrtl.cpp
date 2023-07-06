@@ -39,8 +39,8 @@ public:
 
   Ports get_ports() override {
     return {
-        // #define PORT(name) model.p_name,
-        // #include "ports.def"
+#define PORT(name) model.name.get<unsigned long>(),
+#include "rocket-cxxrtl-ports.def"
     };
   }
 
