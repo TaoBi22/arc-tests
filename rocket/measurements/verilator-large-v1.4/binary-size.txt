@@ -1,0 +1,90 @@
+START: Current timestamp in milliseconds: 1731323088852
+GROUP: verilator SUBGROUP: firtool COMMAND: firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket.fir -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket.sv
+/bin/sh: line 1: perf: command not found
+GROUP: verilator SUBGROUP: verilator
+/bin/sh: line 1: perf: command not found
+GROUP: verilator SUBGROUP: clang
+GROUP: verilator SUBGROUP: firtool COMMAND: firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket.fir -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket.sv
+/home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket.fir:2:1: error: expected 'FIRRTL'
+circuit RocketSystem : 
+^
+
+ Performance counter stats for '/usr/local/bin/firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket.fir -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket.sv':
+
+             21.77 msec task-clock:u                     #    0.986 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             2,289      page-faults:u                    #  105.145 K/sec                     
+         8,495,898      cycles:u                         #    0.390 GHz                         (9.58%)
+         6,387,388      stalled-cycles-frontend:u        #   75.18% frontend cycles idle        (23.40%)
+       142,422,857      instructions:u                   #   16.76  insn per cycle            
+                                                  #    0.04  stalled cycles per insn     (37.14%)
+        28,751,324      branches:u                       #    1.321 G/sec                       (50.87%)
+           445,100      branch-misses:u                  #    1.55% of all branches             (64.61%)
+        59,801,699      L1-dcache-loads:u                #    2.747 G/sec                       (68.81%)
+         5,518,763      L1-dcache-load-misses:u          #    9.23% of all L1-dcache accesses   (68.77%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+           990,600      L1-icache-loads:u                #   45.503 M/sec                       (62.86%)
+            10,256      L1-icache-load-misses:u          #    1.04% of all L1-icache accesses   (49.13%)
+           139,406      dTLB-loads:u                     #    6.404 M/sec                       (35.39%)
+            20,617      dTLB-load-misses:u               #   14.79% of all dTLB cache accesses  (21.61%)
+               995      iTLB-loads:u                     #   45.705 K/sec                       (7.83%)
+     <not counted>      iTLB-load-misses:u                                                      (0.00%)
+     <not counted>      L1-dcache-prefetches:u                                                  (0.00%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.022084158 seconds time elapsed
+
+       0.015715000 seconds user
+       0.006299000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+GROUP: verilator SUBGROUP: verilator
+%Error: Cannot find file containing module: '/home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket.sv'
+%Error: This may be because there's no search path specified with -I<dir>.
+        ... Looked in:
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket.sv
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket.sv.v
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket.sv.sv
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket-vtor//home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket.sv
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket-vtor//home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket.sv.v
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket-vtor//home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-binary-size/rocket.sv.sv
+%Error: Exiting due to 2 error(s)
+
+ Performance counter stats for '/usr/bin/verilator -O3 --noassert --x-assign fast --x-initial fast --threads 1 -sv -cc -Mdir /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket-vtor /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-binary-size//rocket.sv /home/bea/Research/paper-evals/arc-tests/rocket/../verilator-stubs.sv -j 0 -DPRINTF_COND=0 -DASSERT_VERBOSE_COND=0 -DSTOP_COND=0 -Wno-WIDTH':
+
+             69.27 msec task-clock:u                     #    1.430 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             4,268      page-faults:u                    #   61.615 K/sec                     
+       164,687,485      cycles:u                         #    2.378 GHz                         (61.22%)
+        24,310,731      stalled-cycles-frontend:u        #   14.76% frontend cycles idle        (61.22%)
+       119,749,832      instructions:u                   #    0.73  insn per cycle            
+                                                  #    0.20  stalled cycles per insn     (58.08%)
+        72,429,861      branches:u                       #    1.046 G/sec                       (18.37%)
+         1,979,511      branch-misses:u                  #    2.73% of all branches             (32.55%)
+       100,550,898      L1-dcache-loads:u                #    1.452 G/sec                       (41.80%)
+         2,321,924      L1-dcache-load-misses:u          #    2.31% of all L1-dcache accesses   (41.80%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+        26,425,985      L1-icache-loads:u                #  381.497 M/sec                       (41.80%)
+           436,542      L1-icache-load-misses:u          #    1.65% of all L1-icache accesses   (41.91%)
+           518,954      dTLB-loads:u                     #    7.492 M/sec                       (42.11%)
+            18,113      dTLB-load-misses:u               #    3.49% of all dTLB cache accesses  (42.18%)
+           788,622      iTLB-loads:u                     #   11.385 M/sec                       (46.96%)
+            15,063      iTLB-load-misses:u               #    1.91% of all iTLB cache accesses  (66.84%)
+           827,903      L1-dcache-prefetches:u           #   11.952 M/sec                       (63.34%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.048441465 seconds time elapsed
+
+       0.056625000 seconds user
+       0.012209000 seconds sys
+
+
+GROUP: verilator SUBGROUP: clang

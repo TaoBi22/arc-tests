@@ -1,0 +1,112 @@
+START: Current timestamp in milliseconds: 1731323091529
+GROUP: verilator SUBGROUP: firtool COMMAND: firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom.sv
+/bin/sh: line 1: perf: command not found
+GROUP: verilator SUBGROUP: verilator
+/bin/sh: line 1: perf: command not found
+GROUP: verilator SUBGROUP: clang
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+GROUP: verilator SUBGROUP: firtool COMMAND: firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom.sv
+/home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom.fir:1:16: error: FIRRTL version must be >=2.0.0
+FIRRTL version 1.1.0
+               ^
+
+ Performance counter stats for '/usr/local/bin/firtool --lowering-options=disallowLocalVariables,mitigateVivadoArrayIndexConstPropBug /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom.sv':
+
+             27.74 msec task-clock:u                     #    0.988 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             2,599      page-faults:u                    #   93.680 K/sec                     
+        11,717,897      cycles:u                         #    0.422 GHz                         (7.62%)
+         7,463,279      stalled-cycles-frontend:u        #   63.69% frontend cycles idle        (18.37%)
+       178,419,793      instructions:u                   #   15.23  insn per cycle            
+                                                  #    0.04  stalled cycles per insn     (29.18%)
+        36,748,288      branches:u                       #    1.325 G/sec                       (39.99%)
+           572,454      branch-misses:u                  #    1.56% of all branches             (50.78%)
+        75,253,386      L1-dcache-loads:u                #    2.712 G/sec                       (53.97%)
+         7,686,637      L1-dcache-load-misses:u          #   10.21% of all L1-dcache accesses   (54.04%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+         1,188,550      L1-icache-loads:u                #   42.841 M/sec                       (54.04%)
+            10,005      L1-icache-load-misses:u          #    0.84% of all L1-icache accesses   (54.04%)
+            96,678      dTLB-loads:u                     #    3.485 M/sec                       (49.22%)
+            24,396      dTLB-load-misses:u               #   25.23% of all dTLB cache accesses  (38.41%)
+               804      iTLB-loads:u                     #   28.980 K/sec                       (27.59%)
+             2,216      iTLB-load-misses:u               #  275.62% of all iTLB cache accesses  (16.78%)
+            60,985      L1-dcache-prefetches:u           #    2.198 M/sec                       (5.97%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.028079489 seconds time elapsed
+
+       0.020520000 seconds user
+       0.006764000 seconds sys
+
+
+GROUP: verilator SUBGROUP: verilator
+%Error: Cannot find file containing module: '/home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom.sv'
+%Error: This may be because there's no search path specified with -I<dir>.
+        ... Looked in:
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom.sv.v
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom.sv.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom.sv.v
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-medium-O3-simperf/boom.sv.sv
+%Error: Exiting due to 2 error(s)
+
+ Performance counter stats for '/usr/bin/verilator -O3 --noassert --x-assign fast --x-initial fast --threads 1 -sv -cc -Mdir /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom-vtor /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-medium-O3-simperf//boom.sv /home/bea/Research/paper-evals/arc-tests/boom/../verilator-stubs.sv -j 0 -DPRINTF_COND=0 -DASSERT_VERBOSE_COND=0 -DSTOP_COND=0 -Wno-WIDTH':
+
+             63.11 msec task-clock:u                     #    1.539 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             4,243      page-faults:u                    #   67.228 K/sec                     
+       160,855,701      cycles:u                         #    2.549 GHz                         (57.32%)
+        17,083,313      stalled-cycles-frontend:u        #   10.62% frontend cycles idle        (57.36%)
+        97,864,374      instructions:u                   #    0.61  insn per cycle            
+                                                  #    0.17  stalled cycles per insn     (50.70%)
+        65,625,409      branches:u                       #    1.040 G/sec                       (18.02%)
+         1,631,481      branch-misses:u                  #    2.49% of all branches             (38.96%)
+        99,056,022      L1-dcache-loads:u                #    1.569 G/sec                       (45.41%)
+         2,179,552      L1-dcache-load-misses:u          #    2.20% of all L1-dcache accesses   (45.41%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+        26,718,290      L1-icache-loads:u                #  423.337 M/sec                       (45.41%)
+           458,419      L1-icache-load-misses:u          #    1.72% of all L1-icache accesses   (45.49%)
+           583,395      dTLB-loads:u                     #    9.244 M/sec                       (45.51%)
+            19,763      dTLB-load-misses:u               #    3.39% of all dTLB cache accesses  (45.45%)
+           724,262      iTLB-loads:u                     #   11.476 M/sec                       (49.15%)
+            15,281      iTLB-load-misses:u               #    2.11% of all iTLB cache accesses  (64.17%)
+           805,803      L1-dcache-prefetches:u           #   12.768 M/sec                       (60.66%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.040999005 seconds time elapsed
+
+       0.035066000 seconds user
+       0.027589000 seconds sys
+
+
+GROUP: verilator SUBGROUP: clang
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory

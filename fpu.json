@@ -1,0 +1,1504 @@
+[
+  {
+    "name": "FPU",
+    "numStateBytes": 824,
+    "initialFnSym": "",
+    "finalFnSym": "",
+    "states": [
+      {
+        "name": "clock",
+        "offset": 0,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "reset",
+        "offset": 1,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_valid",
+        "offset": 2,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_uopc",
+        "offset": 3,
+        "numBits": 7,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_inst",
+        "offset": 4,
+        "numBits": 32,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_debug_inst",
+        "offset": 8,
+        "numBits": 32,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_rvc",
+        "offset": 12,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_debug_pc",
+        "offset": 16,
+        "numBits": 40,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_iq_type",
+        "offset": 21,
+        "numBits": 3,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_fu_code",
+        "offset": 22,
+        "numBits": 10,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_br_type",
+        "offset": 24,
+        "numBits": 4,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_op1_sel",
+        "offset": 25,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_op2_sel",
+        "offset": 26,
+        "numBits": 3,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_imm_sel",
+        "offset": 27,
+        "numBits": 3,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_op_fcn",
+        "offset": 28,
+        "numBits": 5,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_fcn_dw",
+        "offset": 29,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_csr_cmd",
+        "offset": 30,
+        "numBits": 3,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_is_load",
+        "offset": 31,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_is_sta",
+        "offset": 32,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ctrl_is_std",
+        "offset": 33,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_iw_state",
+        "offset": 34,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_iw_p1_poisoned",
+        "offset": 35,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_iw_p2_poisoned",
+        "offset": 36,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_br",
+        "offset": 37,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_jalr",
+        "offset": 38,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_jal",
+        "offset": 39,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_sfb",
+        "offset": 40,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_br_mask",
+        "offset": 41,
+        "numBits": 8,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_br_tag",
+        "offset": 42,
+        "numBits": 3,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ftq_idx",
+        "offset": 43,
+        "numBits": 4,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_edge_inst",
+        "offset": 44,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_pc_lob",
+        "offset": 45,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_taken",
+        "offset": 46,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_imm_packed",
+        "offset": 48,
+        "numBits": 20,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_csr_addr",
+        "offset": 52,
+        "numBits": 12,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_rob_idx",
+        "offset": 54,
+        "numBits": 5,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ldq_idx",
+        "offset": 55,
+        "numBits": 3,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_stq_idx",
+        "offset": 56,
+        "numBits": 3,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_rxq_idx",
+        "offset": 57,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_pdst",
+        "offset": 58,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_prs1",
+        "offset": 59,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_prs2",
+        "offset": 60,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_prs3",
+        "offset": 61,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ppred",
+        "offset": 62,
+        "numBits": 4,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_prs1_busy",
+        "offset": 63,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_prs2_busy",
+        "offset": 64,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_prs3_busy",
+        "offset": 65,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ppred_busy",
+        "offset": 66,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_stale_pdst",
+        "offset": 67,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_exception",
+        "offset": 68,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_exc_cause",
+        "offset": 72,
+        "numBits": 64,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_bypassable",
+        "offset": 80,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_mem_cmd",
+        "offset": 81,
+        "numBits": 5,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_mem_size",
+        "offset": 82,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_mem_signed",
+        "offset": 83,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_fence",
+        "offset": 84,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_fencei",
+        "offset": 85,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_amo",
+        "offset": 86,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_uses_ldq",
+        "offset": 87,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_uses_stq",
+        "offset": 88,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_sys_pc2epc",
+        "offset": 89,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_is_unique",
+        "offset": 90,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_flush_on_commit",
+        "offset": 91,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ldst_is_rs1",
+        "offset": 92,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ldst",
+        "offset": 93,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_lrs1",
+        "offset": 94,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_lrs2",
+        "offset": 95,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_lrs3",
+        "offset": 96,
+        "numBits": 6,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_ldst_val",
+        "offset": 97,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_dst_rtype",
+        "offset": 98,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_lrs1_rtype",
+        "offset": 99,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_lrs2_rtype",
+        "offset": 100,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_frs3_en",
+        "offset": 101,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_fp_val",
+        "offset": 102,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_fp_single",
+        "offset": 103,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_xcpt_pf_if",
+        "offset": 104,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_xcpt_ae_if",
+        "offset": 105,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_xcpt_ma_if",
+        "offset": 106,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_bp_debug_if",
+        "offset": 107,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_bp_xcpt_if",
+        "offset": 108,
+        "numBits": 1,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_debug_fsrc",
+        "offset": 109,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_uop_debug_tsrc",
+        "offset": 110,
+        "numBits": 2,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_rs1_data",
+        "offset": 112,
+        "numBits": 65,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_rs2_data",
+        "offset": 128,
+        "numBits": 65,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_rs3_data",
+        "offset": 144,
+        "numBits": 65,
+        "type": "input"
+      },
+      {
+        "name": "io_req_bits_fcsr_rm",
+        "offset": 153,
+        "numBits": 3,
+        "type": "input"
+      },
+      {
+        "name": "io_resp_valid",
+        "offset": 592,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_uopc",
+        "offset": 593,
+        "numBits": 7,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_inst",
+        "offset": 596,
+        "numBits": 32,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_debug_inst",
+        "offset": 600,
+        "numBits": 32,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_rvc",
+        "offset": 604,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_debug_pc",
+        "offset": 608,
+        "numBits": 40,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_iq_type",
+        "offset": 613,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_fu_code",
+        "offset": 614,
+        "numBits": 10,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_br_type",
+        "offset": 616,
+        "numBits": 4,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_op1_sel",
+        "offset": 617,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_op2_sel",
+        "offset": 618,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_imm_sel",
+        "offset": 619,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_op_fcn",
+        "offset": 620,
+        "numBits": 5,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_fcn_dw",
+        "offset": 621,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_csr_cmd",
+        "offset": 622,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_is_load",
+        "offset": 623,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_is_sta",
+        "offset": 624,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ctrl_is_std",
+        "offset": 625,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_iw_state",
+        "offset": 626,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_iw_p1_poisoned",
+        "offset": 627,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_iw_p2_poisoned",
+        "offset": 628,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_br",
+        "offset": 629,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_jalr",
+        "offset": 630,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_jal",
+        "offset": 631,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_sfb",
+        "offset": 632,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_br_mask",
+        "offset": 633,
+        "numBits": 8,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_br_tag",
+        "offset": 634,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ftq_idx",
+        "offset": 635,
+        "numBits": 4,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_edge_inst",
+        "offset": 636,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_pc_lob",
+        "offset": 637,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_taken",
+        "offset": 638,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_imm_packed",
+        "offset": 640,
+        "numBits": 20,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_csr_addr",
+        "offset": 644,
+        "numBits": 12,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_rob_idx",
+        "offset": 646,
+        "numBits": 5,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ldq_idx",
+        "offset": 647,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_stq_idx",
+        "offset": 648,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_rxq_idx",
+        "offset": 649,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_pdst",
+        "offset": 650,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_prs1",
+        "offset": 651,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_prs2",
+        "offset": 652,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_prs3",
+        "offset": 653,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ppred",
+        "offset": 654,
+        "numBits": 4,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_prs1_busy",
+        "offset": 655,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_prs2_busy",
+        "offset": 656,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_prs3_busy",
+        "offset": 657,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ppred_busy",
+        "offset": 658,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_stale_pdst",
+        "offset": 659,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_exception",
+        "offset": 660,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_exc_cause",
+        "offset": 664,
+        "numBits": 64,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_bypassable",
+        "offset": 672,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_mem_cmd",
+        "offset": 673,
+        "numBits": 5,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_mem_size",
+        "offset": 674,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_mem_signed",
+        "offset": 675,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_fence",
+        "offset": 676,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_fencei",
+        "offset": 677,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_amo",
+        "offset": 678,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_uses_ldq",
+        "offset": 679,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_uses_stq",
+        "offset": 680,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_sys_pc2epc",
+        "offset": 681,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_is_unique",
+        "offset": 682,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_flush_on_commit",
+        "offset": 683,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ldst_is_rs1",
+        "offset": 684,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ldst",
+        "offset": 685,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_lrs1",
+        "offset": 686,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_lrs2",
+        "offset": 687,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_lrs3",
+        "offset": 688,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_ldst_val",
+        "offset": 689,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_dst_rtype",
+        "offset": 690,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_lrs1_rtype",
+        "offset": 691,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_lrs2_rtype",
+        "offset": 692,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_frs3_en",
+        "offset": 693,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_fp_val",
+        "offset": 694,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_fp_single",
+        "offset": 695,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_xcpt_pf_if",
+        "offset": 696,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_xcpt_ae_if",
+        "offset": 697,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_xcpt_ma_if",
+        "offset": 698,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_bp_debug_if",
+        "offset": 699,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_bp_xcpt_if",
+        "offset": 700,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_debug_fsrc",
+        "offset": 701,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_uop_debug_tsrc",
+        "offset": 702,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_data",
+        "offset": 704,
+        "numBits": 65,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_predicated",
+        "offset": 713,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_valid",
+        "offset": 714,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_uopc",
+        "offset": 715,
+        "numBits": 7,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_inst",
+        "offset": 716,
+        "numBits": 32,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_debug_inst",
+        "offset": 720,
+        "numBits": 32,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_rvc",
+        "offset": 724,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_debug_pc",
+        "offset": 728,
+        "numBits": 40,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_iq_type",
+        "offset": 733,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_fu_code",
+        "offset": 734,
+        "numBits": 10,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_br_type",
+        "offset": 736,
+        "numBits": 4,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_op1_sel",
+        "offset": 737,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_op2_sel",
+        "offset": 738,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_imm_sel",
+        "offset": 739,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_op_fcn",
+        "offset": 740,
+        "numBits": 5,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_fcn_dw",
+        "offset": 741,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_csr_cmd",
+        "offset": 742,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_is_load",
+        "offset": 743,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_is_sta",
+        "offset": 744,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ctrl_is_std",
+        "offset": 745,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_iw_state",
+        "offset": 746,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_iw_p1_poisoned",
+        "offset": 747,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_iw_p2_poisoned",
+        "offset": 748,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_br",
+        "offset": 749,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_jalr",
+        "offset": 750,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_jal",
+        "offset": 751,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_sfb",
+        "offset": 752,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_br_mask",
+        "offset": 753,
+        "numBits": 8,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_br_tag",
+        "offset": 754,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ftq_idx",
+        "offset": 755,
+        "numBits": 4,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_edge_inst",
+        "offset": 756,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_pc_lob",
+        "offset": 757,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_taken",
+        "offset": 758,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_imm_packed",
+        "offset": 760,
+        "numBits": 20,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_csr_addr",
+        "offset": 764,
+        "numBits": 12,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_rob_idx",
+        "offset": 766,
+        "numBits": 5,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ldq_idx",
+        "offset": 767,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_stq_idx",
+        "offset": 768,
+        "numBits": 3,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_rxq_idx",
+        "offset": 769,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_pdst",
+        "offset": 770,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_prs1",
+        "offset": 771,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_prs2",
+        "offset": 772,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_prs3",
+        "offset": 773,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ppred",
+        "offset": 774,
+        "numBits": 4,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_prs1_busy",
+        "offset": 775,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_prs2_busy",
+        "offset": 776,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_prs3_busy",
+        "offset": 777,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ppred_busy",
+        "offset": 778,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_stale_pdst",
+        "offset": 779,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_exception",
+        "offset": 780,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_exc_cause",
+        "offset": 784,
+        "numBits": 64,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_bypassable",
+        "offset": 792,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_mem_cmd",
+        "offset": 793,
+        "numBits": 5,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_mem_size",
+        "offset": 794,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_mem_signed",
+        "offset": 795,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_fence",
+        "offset": 796,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_fencei",
+        "offset": 797,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_amo",
+        "offset": 798,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_uses_ldq",
+        "offset": 799,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_uses_stq",
+        "offset": 800,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_sys_pc2epc",
+        "offset": 801,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_is_unique",
+        "offset": 802,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_flush_on_commit",
+        "offset": 803,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ldst_is_rs1",
+        "offset": 804,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ldst",
+        "offset": 805,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_lrs1",
+        "offset": 806,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_lrs2",
+        "offset": 807,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_lrs3",
+        "offset": 808,
+        "numBits": 6,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_ldst_val",
+        "offset": 809,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_dst_rtype",
+        "offset": 810,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_lrs1_rtype",
+        "offset": 811,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_lrs2_rtype",
+        "offset": 812,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_frs3_en",
+        "offset": 813,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_fp_val",
+        "offset": 814,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_fp_single",
+        "offset": 815,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_xcpt_pf_if",
+        "offset": 816,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_xcpt_ae_if",
+        "offset": 817,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_xcpt_ma_if",
+        "offset": 818,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_bp_debug_if",
+        "offset": 819,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_bp_xcpt_if",
+        "offset": 820,
+        "numBits": 1,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_debug_fsrc",
+        "offset": 821,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_uop_debug_tsrc",
+        "offset": 822,
+        "numBits": 2,
+        "type": "output"
+      },
+      {
+        "name": "io_resp_bits_fflags_bits_flags",
+        "offset": 823,
+        "numBits": 5,
+        "type": "output"
+      }
+    ]
+  }
+]

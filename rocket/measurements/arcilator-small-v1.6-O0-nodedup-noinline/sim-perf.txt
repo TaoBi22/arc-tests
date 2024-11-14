@@ -1,0 +1,186 @@
+START: Current timestamp in milliseconds: 1731323089632
+GROUP: arcilator SUBGROUP: firtool COMMAND: firtool --ir-hw /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.fir -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.mlir
+/bin/sh: line 1: perf: command not found
+GROUP: arcilator SUBGROUP: arcilator COMMAND: arcilator /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.mlir --state-file=/home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.json -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.ll -O0 --dedup=0 --inline=0
+/bin/sh: line 1: perf: command not found
+GROUP: arcilator SUBGROUP: opt COMMAND: opt -O3 -S /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.ll -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-llvm.ll
+/bin/sh: line 1: perf: command not found
+GROUP: arcilator SUBGROUP: llc COMMAND: llc /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-llvm.ll -O3 --filetype=obj -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.o
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+/bin/sh: line 1: perf: command not found
+GROUP: arcilator SUBGROUP: firtool COMMAND: firtool --ir-hw /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.fir -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.mlir
+/home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.fir:1:1: error: expected 'FIRRTL'
+circuit RocketSystem :
+^
+
+ Performance counter stats for '/usr/local/bin/firtool --ir-hw /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.fir -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.mlir':
+
+             21.10 msec task-clock:u                     #    0.985 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             2,236      page-faults:u                    #  105.987 K/sec                     
+         7,597,945      cycles:u                         #    0.360 GHz                         (7.52%)
+         4,459,001      stalled-cycles-frontend:u        #   58.69% frontend cycles idle        (21.70%)
+       127,889,475      instructions:u                   #   16.83  insn per cycle            
+                                                  #    0.03  stalled cycles per insn     (35.96%)
+        27,190,929      branches:u                       #    1.289 G/sec                       (50.11%)
+           410,911      branch-misses:u                  #    1.51% of all branches             (64.33%)
+        55,272,366      L1-dcache-loads:u                #    2.620 G/sec                       (71.03%)
+         6,039,165      L1-dcache-load-misses:u          #   10.93% of all L1-dcache accesses   (71.04%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+         1,004,301      L1-icache-loads:u                #   47.604 M/sec                       (64.04%)
+             9,988      L1-icache-load-misses:u          #    0.99% of all L1-icache accesses   (49.89%)
+           237,055      dTLB-loads:u                     #   11.236 M/sec                       (35.67%)
+            20,952      dTLB-load-misses:u               #    8.84% of all dTLB cache accesses  (21.45%)
+             1,074      iTLB-loads:u                     #   50.908 K/sec                       (7.26%)
+     <not counted>      iTLB-load-misses:u                                                      (0.00%)
+     <not counted>      L1-dcache-prefetches:u                                                  (0.00%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.021411777 seconds time elapsed
+
+       0.015229000 seconds user
+       0.006102000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+GROUP: arcilator SUBGROUP: arcilator COMMAND: arcilator /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.mlir --state-file=/home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.json -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.ll -O0 --dedup=0 --inline=0
+arcilator: Unknown command line argument '-O0'.  Try: '/usr/local/bin/arcilator --help'
+arcilator: Did you mean '-o'?
+
+ Performance counter stats for '/usr/local/bin/arcilator /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.mlir --state-file=/home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket.json -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.ll -O0 --dedup=0 --inline=0':
+
+             36.88 msec task-clock:u                     #    0.990 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             3,453      page-faults:u                    #   93.616 K/sec                     
+        71,166,292      cycles:u                         #    1.929 GHz                         (26.88%)
+        11,406,361      stalled-cycles-frontend:u        #   16.03% frontend cycles idle        (26.88%)
+       157,199,143      instructions:u                   #    2.21  insn per cycle            
+                                                  #    0.07  stalled cycles per insn     (26.86%)
+        44,555,940      branches:u                       #    1.208 G/sec                       (30.41%)
+           913,825      branch-misses:u                  #    2.05% of all branches             (38.55%)
+       104,250,939      L1-dcache-loads:u                #    2.826 G/sec                       (40.65%)
+        31,612,777      L1-dcache-load-misses:u          #   30.32% of all L1-dcache accesses   (40.63%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+           378,658      L1-icache-loads:u                #   10.266 M/sec                       (40.65%)
+             2,045      L1-icache-load-misses:u          #    0.54% of all L1-icache accesses   (40.63%)
+        14,701,975      dTLB-loads:u                     #  398.594 M/sec                       (40.60%)
+           153,588      dTLB-load-misses:u               #    1.04% of all dTLB cache accesses  (40.60%)
+             5,302      iTLB-loads:u                     #  143.746 K/sec                       (40.62%)
+             5,480      iTLB-load-misses:u               #  103.36% of all iTLB cache accesses  (37.08%)
+         3,679,602      L1-dcache-prefetches:u           #   99.760 M/sec                       (28.96%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.037260022 seconds time elapsed
+
+       0.030319000 seconds user
+       0.006747000 seconds sys
+
+
+GROUP: arcilator SUBGROUP: opt COMMAND: opt -O3 -S /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.ll -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-llvm.ll
+/usr/local/bin/opt: /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.ll: error: Could not open input file: No such file or directory
+
+ Performance counter stats for '/usr/local/bin/opt -O3 -S /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.ll -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-llvm.ll':
+
+             10.73 msec task-clock:u                     #    0.973 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,933      page-faults:u                    #  180.113 K/sec                     
+         7,492,742      cycles:u                         #    0.698 GHz                         (15.87%)
+         2,098,889      stalled-cycles-frontend:u        #   28.01% frontend cycles idle        (43.72%)
+        42,321,515      instructions:u                   #    5.65  insn per cycle            
+                                                  #    0.05  stalled cycles per insn     (71.67%)
+         6,970,854      branches:u                       #  649.531 M/sec                       (99.62%)
+           141,061      branch-misses:u                  #    2.02% of all branches           
+        15,601,242      L1-dcache-loads:u                #    1.454 G/sec                       (84.13%)
+           561,822      L1-dcache-load-misses:u          #    3.60% of all L1-dcache accesses   (56.28%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+         1,107,544      L1-icache-loads:u                #  103.199 M/sec                       (28.33%)
+                 0      L1-icache-load-misses:u                                                 (0.38%)
+     <not counted>      dTLB-loads:u                                                            (0.00%)
+     <not counted>      dTLB-load-misses:u                                                      (0.00%)
+     <not counted>      iTLB-loads:u                                                            (0.00%)
+     <not counted>      iTLB-load-misses:u                                                      (0.00%)
+     <not counted>      L1-dcache-prefetches:u                                                  (0.00%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.011029664 seconds time elapsed
+
+       0.002731000 seconds user
+       0.008282000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+GROUP: arcilator SUBGROUP: llc COMMAND: llc /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-llvm.ll -O3 --filetype=obj -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.o
+/usr/local/bin/llc: error: /usr/local/bin/llc: /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-llvm.ll: error: Could not open input file: No such file or directory
+
+ Performance counter stats for '/usr/local/bin/llc /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-llvm.ll -O3 --filetype=obj -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/arcilator-small-v1.6-O0-nodedup-noinline-simperf//rocket-arc.o':
+
+             10.69 msec task-clock:u                     #    0.975 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,926      page-faults:u                    #  180.251 K/sec                     
+         3,985,384      cycles:u                         #    0.373 GHz                         (3.93%)
+         2,501,556      stalled-cycles-frontend:u        #   62.77% frontend cycles idle        (32.01%)
+        43,825,668      instructions:u                   #   11.00  insn per cycle            
+                                                  #    0.06  stalled cycles per insn     (59.95%)
+         6,836,302      branches:u                       #  639.797 M/sec                       (88.03%)
+           135,728      branch-misses:u                  #    1.99% of all branches           
+        12,753,174      L1-dcache-loads:u                #    1.194 G/sec                       (96.07%)
+           642,248      L1-dcache-load-misses:u          #    5.04% of all L1-dcache accesses   (67.99%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+         1,064,838      L1-icache-loads:u                #   99.656 M/sec                       (40.05%)
+               392      L1-icache-load-misses:u          #    0.04% of all L1-icache accesses   (11.97%)
+     <not counted>      dTLB-loads:u                                                            (0.00%)
+     <not counted>      dTLB-load-misses:u                                                      (0.00%)
+     <not counted>      iTLB-loads:u                                                            (0.00%)
+     <not counted>      iTLB-load-misses:u                                                      (0.00%)
+     <not counted>      L1-dcache-prefetches:u                                                  (0.00%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.010961764 seconds time elapsed
+
+       0.003641000 seconds user
+       0.007293000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory

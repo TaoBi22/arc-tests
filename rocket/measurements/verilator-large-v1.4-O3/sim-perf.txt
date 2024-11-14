@@ -1,0 +1,98 @@
+START: Current timestamp in milliseconds: 1731323117756
+GROUP: verilator SUBGROUP: firtool COMMAND: firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-O3-simperf//rocket.fir -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-O3-simperf//rocket.sv
+/home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-O3-simperf//rocket.fir:2:1: error: expected 'FIRRTL'
+circuit RocketSystem : 
+^
+
+ Performance counter stats for '/usr/local/bin/firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-O3-simperf//rocket.fir -o /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-O3-simperf//rocket.sv':
+
+             20.60 msec task-clock:u                     #    0.983 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             2,285      page-faults:u                    #  110.906 K/sec                     
+         7,856,509      cycles:u                         #    0.381 GHz                         (13.12%)
+         4,178,676      stalled-cycles-frontend:u        #   53.19% frontend cycles idle        (27.74%)
+       133,142,736      instructions:u                   #   16.95  insn per cycle            
+                                                  #    0.03  stalled cycles per insn     (42.29%)
+        28,187,908      branches:u                       #    1.368 G/sec                       (56.86%)
+           438,605      branch-misses:u                  #    1.56% of all branches             (71.37%)
+        61,158,489      L1-dcache-loads:u                #    2.968 G/sec                       (72.85%)
+         5,228,607      L1-dcache-load-misses:u          #    8.55% of all L1-dcache accesses   (72.26%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+         1,072,148      L1-icache-loads:u                #   52.039 M/sec                       (57.71%)
+            10,706      L1-icache-load-misses:u          #    1.00% of all L1-icache accesses   (43.14%)
+            70,074      dTLB-loads:u                     #    3.401 M/sec                       (28.63%)
+            21,104      dTLB-load-misses:u               #   30.12% of all dTLB cache accesses  (14.03%)
+     <not counted>      iTLB-loads:u                                                            (0.00%)
+     <not counted>      iTLB-load-misses:u                                                      (0.00%)
+     <not counted>      L1-dcache-prefetches:u                                                  (0.00%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.020954182 seconds time elapsed
+
+       0.013465000 seconds user
+       0.006871000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+GROUP: verilator SUBGROUP: verilator
+%Error: Cannot find file containing module: '/home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket.sv'
+%Error: This may be because there's no search path specified with -I<dir>.
+        ... Looked in:
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket.sv
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket.sv.v
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket.sv.sv
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket-vtor//home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket.sv
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket-vtor//home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket.sv.v
+             /home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket-vtor//home/bea/Research/paper-evals/arc-tests/rocket/./build/verilator-large-v1.4-O3-simperf/rocket.sv.sv
+%Error: Exiting due to 2 error(s)
+
+ Performance counter stats for '/usr/bin/verilator -O3 --noassert --x-assign fast --x-initial fast --threads 1 -sv -cc -Mdir /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-O3-simperf//rocket-vtor /home/bea/Research/paper-evals/arc-tests/rocket//./build/verilator-large-v1.4-O3-simperf//rocket.sv /home/bea/Research/paper-evals/arc-tests/rocket/../verilator-stubs.sv -j 0 -DPRINTF_COND=0 -DASSERT_VERBOSE_COND=0 -DSTOP_COND=0 -Wno-WIDTH':
+
+             64.07 msec task-clock:u                     #    1.553 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             4,226      page-faults:u                    #   65.964 K/sec                     
+       145,753,365      cycles:u                         #    2.275 GHz                         (57.93%)
+        18,725,512      stalled-cycles-frontend:u        #   12.85% frontend cycles idle        (57.94%)
+       107,275,268      instructions:u                   #    0.74  insn per cycle            
+                                                  #    0.17  stalled cycles per insn     (57.86%)
+        70,326,122      branches:u                       #    1.098 G/sec                       (19.95%)
+         1,928,639      branch-misses:u                  #    2.74% of all branches             (37.55%)
+       101,832,676      L1-dcache-loads:u                #    1.590 G/sec                       (43.82%)
+         2,327,330      L1-dcache-load-misses:u          #    2.29% of all L1-dcache accesses   (43.86%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+        28,603,296      L1-icache-loads:u                #  446.470 M/sec                       (43.86%)
+           449,222      L1-icache-load-misses:u          #    1.57% of all L1-icache accesses   (43.84%)
+           558,012      dTLB-loads:u                     #    8.710 M/sec                       (43.82%)
+            19,217      dTLB-load-misses:u               #    3.44% of all dTLB cache accesses  (43.82%)
+           751,658      iTLB-loads:u                     #   11.733 M/sec                       (43.87%)
+            13,882      iTLB-load-misses:u               #    1.85% of all iTLB cache accesses  (62.97%)
+           783,578      L1-dcache-prefetches:u           #   12.231 M/sec                       (58.85%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.041240351 seconds time elapsed
+
+       0.049233000 seconds user
+       0.014246000 seconds sys
+
+
+GROUP: verilator SUBGROUP: clang
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory

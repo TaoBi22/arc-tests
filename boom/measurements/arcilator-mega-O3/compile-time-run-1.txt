@@ -1,0 +1,148 @@
+START: Current timestamp in milliseconds: 1731323127662
+GROUP: arcilator SUBGROUP: firtool COMMAND: firtool --ir-hw /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.mlir
+/home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.fir:1:16: error: FIRRTL version must be >=2.0.0
+FIRRTL version 1.1.0
+               ^
+
+ Performance counter stats for '/usr/local/bin/firtool --ir-hw /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.mlir':
+
+             30.13 msec task-clock:u                     #    0.989 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             2,889      page-faults:u                    #   95.877 K/sec                     
+         8,493,767      cycles:u                         #    0.282 GHz                         (10.40%)
+         7,750,458      stalled-cycles-frontend:u        #   91.25% frontend cycles idle        (16.84%)
+       209,043,102      instructions:u                   #   24.61  insn per cycle            
+                                                  #    0.04  stalled cycles per insn     (26.79%)
+        43,803,347      branches:u                       #    1.454 G/sec                       (36.78%)
+           676,467      branch-misses:u                  #    1.54% of all branches             (46.70%)
+        93,620,726      L1-dcache-loads:u                #    3.107 G/sec                       (49.78%)
+         8,172,970      L1-dcache-load-misses:u          #    8.73% of all L1-dcache accesses   (49.81%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+         1,175,478      L1-icache-loads:u                #   39.010 M/sec                       (49.78%)
+             9,425      L1-icache-load-misses:u          #    0.80% of all L1-icache accesses   (49.75%)
+            59,320      dTLB-loads:u                     #    1.969 M/sec                       (49.78%)
+            29,762      dTLB-load-misses:u               #   50.17% of all dTLB cache accesses  (43.34%)
+               389      iTLB-loads:u                     #   12.910 K/sec                       (33.35%)
+             1,673      iTLB-load-misses:u               #  430.08% of all iTLB cache accesses  (23.43%)
+           973,120      L1-dcache-prefetches:u           #   32.295 M/sec                       (13.47%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.030481010 seconds time elapsed
+
+       0.020282000 seconds user
+       0.010151000 seconds sys
+
+
+GROUP: arcilator SUBGROUP: arcilator COMMAND: arcilator /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.mlir --state-file=/home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.json -o /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-arc.ll -O3
+arcilator: Unknown command line argument '-O3'.  Try: '/usr/local/bin/arcilator --help'
+arcilator: Did you mean '-o'?
+
+ Performance counter stats for '/usr/local/bin/arcilator /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.mlir --state-file=/home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom.json -o /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-arc.ll -O3':
+
+             34.00 msec task-clock:u                     #    0.992 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             3,448      page-faults:u                    #  101.411 K/sec                     
+        34,966,304      cycles:u                         #    1.028 GHz                         (20.59%)
+         6,156,124      stalled-cycles-frontend:u        #   17.61% frontend cycles idle        (20.62%)
+       228,388,134      instructions:u                   #    6.53  insn per cycle            
+                                                  #    0.03  stalled cycles per insn     (24.23%)
+        50,279,341      branches:u                       #    1.479 G/sec                       (33.05%)
+           882,706      branch-misses:u                  #    1.76% of all branches             (41.88%)
+       112,204,424      L1-dcache-loads:u                #    3.300 G/sec                       (44.12%)
+        32,155,071      L1-dcache-load-misses:u          #   28.66% of all L1-dcache accesses   (44.12%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+           364,377      L1-icache-loads:u                #   10.717 M/sec                       (44.12%)
+             1,908      L1-icache-load-misses:u          #    0.52% of all L1-icache accesses   (44.12%)
+        13,503,455      dTLB-loads:u                     #  397.159 M/sec                       (44.12%)
+           104,403      dTLB-load-misses:u               #    0.77% of all dTLB cache accesses  (44.12%)
+             5,476      iTLB-loads:u                     #  161.058 K/sec                       (40.45%)
+             6,239      iTLB-load-misses:u               #  113.93% of all iTLB cache accesses  (31.65%)
+         2,599,781      L1-dcache-prefetches:u           #   76.464 M/sec                       (22.83%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.034262462 seconds time elapsed
+
+       0.027341000 seconds user
+       0.006840000 seconds sys
+
+
+GROUP: arcilator SUBGROUP: opt COMMAND: opt -O3 -S /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-arc.ll -o /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-llvm.ll
+/usr/local/bin/opt: /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-arc.ll: error: Could not open input file: No such file or directory
+
+ Performance counter stats for '/usr/local/bin/opt -O3 -S /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-arc.ll -o /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-llvm.ll':
+
+             10.57 msec task-clock:u                     #    0.967 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,932      page-faults:u                    #  182.794 K/sec                     
+         7,770,551      cycles:u                         #    0.735 GHz                         (18.71%)
+         2,140,983      stalled-cycles-frontend:u        #   27.55% frontend cycles idle        (46.96%)
+        41,228,026      instructions:u                   #    5.31  insn per cycle            
+                                                  #    0.05  stalled cycles per insn     (75.34%)
+         6,944,624      branches:u                       #  657.056 M/sec                     
+           140,777      branch-misses:u                  #    2.03% of all branches           
+        15,880,396      L1-dcache-loads:u                #    1.503 G/sec                       (81.29%)
+           503,055      L1-dcache-load-misses:u          #    3.17% of all L1-dcache accesses   (53.04%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+           945,664      L1-icache-loads:u                #   89.473 M/sec                       (24.66%)
+     <not counted>      L1-icache-load-misses:u                                                 (0.00%)
+     <not counted>      dTLB-loads:u                                                            (0.00%)
+     <not counted>      dTLB-load-misses:u                                                      (0.00%)
+     <not counted>      iTLB-loads:u                                                            (0.00%)
+     <not counted>      iTLB-load-misses:u                                                      (0.00%)
+     <not counted>      L1-dcache-prefetches:u                                                  (0.00%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.010932753 seconds time elapsed
+
+       0.002717000 seconds user
+       0.008170000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+GROUP: arcilator SUBGROUP: llc COMMAND: llc /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-llvm.ll -O3 --filetype=obj -o /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-arc.o
+/usr/local/bin/llc: error: /usr/local/bin/llc: /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-llvm.ll: error: Could not open input file: No such file or directory
+
+ Performance counter stats for '/usr/local/bin/llc -O3 --filetype=obj /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-llvm.ll -o /home/bea/Research/paper-evals/arc-tests/boom//./build/arcilator-mega-O3-compile-time-run-1//boom-arc.o':
+
+              8.70 msec task-clock:u                     #    0.968 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             1,928      page-faults:u                    #  221.683 K/sec                     
+         5,117,149      cycles:u                         #    0.588 GHz                         (17.92%)
+         2,181,874      stalled-cycles-frontend:u        #   42.64% frontend cycles idle        (52.41%)
+        35,592,738      instructions:u                   #    6.96  insn per cycle            
+                                                  #    0.06  stalled cycles per insn     (86.80%)
+         6,074,645      branches:u                       #  698.467 M/sec                     
+           133,631      branch-misses:u                  #    2.20% of all branches           
+        14,215,730      L1-dcache-loads:u                #    1.635 G/sec                       (82.08%)
+           399,407      L1-dcache-load-misses:u          #    2.81% of all L1-dcache accesses   (47.59%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+                 0      L1-icache-loads:u                #    0.000 /sec                        (13.20%)
+     <not counted>      L1-icache-load-misses:u                                                 (0.00%)
+     <not counted>      dTLB-loads:u                                                            (0.00%)
+     <not counted>      dTLB-load-misses:u                                                      (0.00%)
+     <not counted>      iTLB-loads:u                                                            (0.00%)
+     <not counted>      iTLB-load-misses:u                                                      (0.00%)
+     <not counted>      L1-dcache-prefetches:u                                                  (0.00%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.008981446 seconds time elapsed
+
+       0.005993000 seconds user
+       0.002994000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog

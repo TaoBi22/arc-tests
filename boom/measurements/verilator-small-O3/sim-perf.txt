@@ -1,0 +1,103 @@
+START: Current timestamp in milliseconds: 1731323091936
+GROUP: verilator SUBGROUP: firtool COMMAND: firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom.sv
+/bin/sh: line 1: perf: command not found
+GROUP: verilator SUBGROUP: verilator
+/bin/sh: line 1: perf: command not found
+GROUP: verilator SUBGROUP: clang
+GROUP: verilator SUBGROUP: firtool COMMAND: firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom.sv
+/home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom.fir:1:16: error: FIRRTL version must be >=2.0.0
+FIRRTL version 1.1.0
+               ^
+
+ Performance counter stats for '/usr/local/bin/firtool --lowering-options=disallowLocalVariables,mitigateVivadoArrayIndexConstPropBug /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom.sv':
+
+             22.85 msec task-clock:u                     #    0.983 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             2,527      page-faults:u                    #  110.613 K/sec                     
+        14,041,698      cycles:u                         #    0.615 GHz                         (10.40%)
+         6,999,158      stalled-cycles-frontend:u        #   49.85% frontend cycles idle        (23.53%)
+       171,007,600      instructions:u                   #   12.18  insn per cycle            
+                                                  #    0.04  stalled cycles per insn     (36.67%)
+        32,793,903      branches:u                       #    1.435 G/sec                       (49.80%)
+           529,460      branch-misses:u                  #    1.61% of all branches             (62.93%)
+        74,724,870      L1-dcache-loads:u                #    3.271 G/sec                       (65.66%)
+         4,573,004      L1-dcache-load-misses:u          #    6.12% of all L1-dcache accesses   (65.37%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+           951,951      L1-icache-loads:u                #   41.669 M/sec                       (63.33%)
+             7,949      L1-icache-load-misses:u          #    0.84% of all L1-icache accesses   (50.20%)
+            58,804      dTLB-loads:u                     #    2.574 M/sec                       (37.07%)
+            14,866      dTLB-load-misses:u               #   25.28% of all dTLB cache accesses  (23.94%)
+             1,405      iTLB-loads:u                     #   61.500 K/sec                       (11.10%)
+     <not counted>      iTLB-load-misses:u                                                      (0.00%)
+     <not counted>      L1-dcache-prefetches:u                                                  (0.00%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.023246912 seconds time elapsed
+
+       0.016478000 seconds user
+       0.006582000 seconds sys
+
+
+Some events weren't counted. Try disabling the NMI watchdog:
+	echo 0 > /proc/sys/kernel/nmi_watchdog
+	perf stat ...
+	echo 1 > /proc/sys/kernel/nmi_watchdog
+GROUP: verilator SUBGROUP: verilator
+%Error: Cannot find file containing module: '/home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom.sv'
+%Error: This may be because there's no search path specified with -I<dir>.
+        ... Looked in:
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom.sv.v
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom.sv.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom.sv.v
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-small-O3-simperf/boom.sv.sv
+%Error: Exiting due to 2 error(s)
+
+ Performance counter stats for '/usr/bin/verilator -O3 --noassert --x-assign fast --x-initial fast --threads 1 -sv -cc -Mdir /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom-vtor /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-small-O3-simperf//boom.sv /home/bea/Research/paper-evals/arc-tests/boom/../verilator-stubs.sv -j 0 -DPRINTF_COND=0 -DASSERT_VERBOSE_COND=0 -DSTOP_COND=0 -Wno-WIDTH':
+
+             66.27 msec task-clock:u                     #    1.706 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             4,230      page-faults:u                    #   63.830 K/sec                     
+       132,438,126      cycles:u                         #    1.998 GHz                         (59.87%)
+        15,121,698      stalled-cycles-frontend:u        #   11.42% frontend cycles idle        (61.33%)
+        89,079,231      instructions:u                   #    0.67  insn per cycle            
+                                                  #    0.17  stalled cycles per insn     (59.89%)
+        81,822,832      branches:u                       #    1.235 G/sec                       (16.96%)
+         2,595,905      branch-misses:u                  #    3.17% of all branches             (29.52%)
+       102,987,614      L1-dcache-loads:u                #    1.554 G/sec                       (48.86%)
+         2,210,670      L1-dcache-load-misses:u          #    2.15% of all L1-dcache accesses   (49.04%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+        27,789,012      L1-icache-loads:u                #  419.332 M/sec                       (49.21%)
+           444,765      L1-icache-load-misses:u          #    1.60% of all L1-icache accesses   (49.27%)
+           567,274      dTLB-loads:u                     #    8.560 M/sec                       (49.27%)
+            19,559      dTLB-load-misses:u               #    3.45% of all dTLB cache accesses  (46.63%)
+           678,549      iTLB-loads:u                     #   10.239 M/sec                       (45.60%)
+            10,797      iTLB-load-misses:u               #    1.59% of all iTLB cache accesses  (66.72%)
+           658,372      L1-dcache-prefetches:u           #    9.935 M/sec                       (62.72%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.038842447 seconds time elapsed
+
+       0.044860000 seconds user
+       0.020022000 seconds sys
+
+
+GROUP: verilator SUBGROUP: clang
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory
+Workload failed: No such file or directory

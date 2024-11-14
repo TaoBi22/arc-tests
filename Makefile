@@ -8,9 +8,9 @@ endif
 mkfile_path := $(dir $(MAKEFILE_LIST))
 
 ARCILATOR_UTILS_ROOT ?= $(dir $(shell which arcilator))
-MODEL ?= rocket
+MODEL ?= fpu
 BINARY ?= $(mkfile_path)/benchmarks/dhrystone/dhrystone.riscv
-TOP_NAME ?= DigitalTop
+TOP_NAME ?= FPU
 VERILATOR_ROOT ?= $(shell verilator -getenv VERILATOR_ROOT)
 VERILATOR_FLAGS = -O3 -sv -cc --build
 ifeq ($(TRACE),1)
@@ -19,11 +19,11 @@ endif
 
 DEBUG_STAGE ?= state-lowering
 
-$(MODEL).fir: $(mkfile_path)/$(MODEL)/$(MODEL).fir.gz
-	gzip -dc $< > $@
+$(MODEL).fir: $(mkfile_path)/$(MODEL)/$(MODEL).fir
+	cp $< $@
 
 $(MODEL).mlir: $(MODEL).fir
-	firtool --dedup=1 --ir-hw $< -o $@
+	firtool --ir-hw $< -o $@
 
 $(MODEL).o $(MODEL).json: $(MODEL).mlir
 	arcilator $< --state-file=$(MODEL).json | opt -O3 --strip-debug -S | llc -O3 --filetype=obj -o $(MODEL).o
@@ -32,7 +32,7 @@ $(MODEL).h: $(MODEL).json
 	python $(ARCILATOR_UTILS_ROOT)/arcilator-header-cpp.py $< --view-depth 1 > $@
 
 $(MODEL).sv: $(MODEL).fir
-	firtool --verilog --dedup=1 $< -o $@
+	firtool --verilog $< -o $@
 	cat $(mkfile_path)/EICG_wrapper.v >> $(MODEL).sv
 	cat $(mkfile_path)/plusarg_reader.v >> $(MODEL).sv
 

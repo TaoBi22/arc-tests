@@ -1,0 +1,81 @@
+START: Current timestamp in milliseconds: 1731323133097
+GROUP: verilator SUBGROUP: firtool COMMAND: firtool --lowering-options=disallowLocalVariables /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-mega-O3-compile-time-run-4//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-mega-O3-compile-time-run-4//boom.sv
+/home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-mega-O3-compile-time-run-4//boom.fir:1:16: error: FIRRTL version must be >=2.0.0
+FIRRTL version 1.1.0
+               ^
+
+ Performance counter stats for '/usr/local/bin/firtool --lowering-options=disallowLocalVariables,mitigateVivadoArrayIndexConstPropBug /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-mega-O3-compile-time-run-4//boom.fir -o /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-mega-O3-compile-time-run-4//boom.sv':
+
+             29.75 msec task-clock:u                     #    0.986 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             2,889      page-faults:u                    #   97.107 K/sec                     
+         6,238,451      cycles:u                         #    0.210 GHz                         (9.21%)
+         9,823,124      stalled-cycles-frontend:u        #  157.46% frontend cycles idle        (14.99%)
+       212,590,807      instructions:u                   #   34.08  insn per cycle            
+                                                  #    0.05  stalled cycles per insn     (25.07%)
+        44,150,918      branches:u                       #    1.484 G/sec                       (35.19%)
+           671,464      branch-misses:u                  #    1.52% of all branches             (45.24%)
+        89,685,144      L1-dcache-loads:u                #    3.015 G/sec                       (50.42%)
+         7,793,837      L1-dcache-load-misses:u          #    8.69% of all L1-dcache accesses   (50.42%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+         1,155,058      L1-icache-loads:u                #   38.825 M/sec                       (50.42%)
+             9,050      L1-icache-load-misses:u          #    0.78% of all L1-icache accesses   (50.38%)
+            54,538      dTLB-loads:u                     #    1.833 M/sec                       (50.45%)
+            20,038      dTLB-load-misses:u               #   36.74% of all dTLB cache accesses  (44.68%)
+               393      iTLB-loads:u                     #   13.210 K/sec                       (34.60%)
+             1,635      iTLB-load-misses:u               #  416.03% of all iTLB cache accesses  (24.51%)
+           787,390      L1-dcache-prefetches:u           #   26.466 M/sec                       (14.43%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.030159158 seconds time elapsed
+
+       0.026737000 seconds user
+       0.003343000 seconds sys
+
+
+GROUP: verilator SUBGROUP: verilator
+%Error: Cannot find file containing module: '/home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom.sv'
+%Error: This may be because there's no search path specified with -I<dir>.
+        ... Looked in:
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom.sv.v
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom.sv.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom.sv
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom.sv.v
+             /home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom-vtor//home/bea/Research/paper-evals/arc-tests/boom/./build/verilator-mega-O3-compile-time-run-4/boom.sv.sv
+%Error: Exiting due to 2 error(s)
+
+ Performance counter stats for '/usr/bin/verilator -O3 --noassert --x-assign fast --x-initial fast --threads 1 -sv -cc -Mdir /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-mega-O3-compile-time-run-4//boom-vtor /home/bea/Research/paper-evals/arc-tests/boom//./build/verilator-mega-O3-compile-time-run-4//boom.sv /home/bea/Research/paper-evals/arc-tests/boom/../verilator-stubs.sv -j 0 -DPRINTF_COND=0 -DASSERT_VERBOSE_COND=0 -DSTOP_COND=0 -Wno-WIDTH':
+
+             62.72 msec task-clock:u                     #    1.531 CPUs utilized             
+                 0      context-switches:u               #    0.000 /sec                      
+                 0      cpu-migrations:u                 #    0.000 /sec                      
+             4,237      page-faults:u                    #   67.553 K/sec                     
+       170,401,104      cycles:u                         #    2.717 GHz                         (57.04%)
+        18,243,522      stalled-cycles-frontend:u        #   10.71% frontend cycles idle        (55.37%)
+       113,747,544      instructions:u                   #    0.67  insn per cycle            
+                                                  #    0.16  stalled cycles per insn     (45.35%)
+        77,105,078      branches:u                       #    1.229 G/sec                       (17.21%)
+         1,755,009      branch-misses:u                  #    2.28% of all branches             (40.81%)
+       102,858,902      L1-dcache-loads:u                #    1.640 G/sec                       (46.69%)
+         2,186,498      L1-dcache-load-misses:u          #    2.13% of all L1-dcache accesses   (46.66%)
+   <not supported>      LLC-loads:u                                                           
+   <not supported>      LLC-load-misses:u                                                     
+        27,258,711      L1-icache-loads:u                #  434.600 M/sec                       (46.66%)
+           433,003      L1-icache-load-misses:u          #    1.59% of all L1-icache accesses   (46.67%)
+           548,148      dTLB-loads:u                     #    8.739 M/sec                       (46.64%)
+            23,721      dTLB-load-misses:u               #    4.33% of all dTLB cache accesses  (48.96%)
+           601,375      iTLB-loads:u                     #    9.588 M/sec                       (54.46%)
+            13,613      iTLB-load-misses:u               #    2.26% of all iTLB cache accesses  (64.79%)
+           793,252      L1-dcache-prefetches:u           #   12.647 M/sec                       (60.02%)
+   <not supported>      L1-dcache-prefetch-misses:u                                           
+
+       0.040957005 seconds time elapsed
+
+       0.044793000 seconds user
+       0.017377000 seconds sys
+
+
+GROUP: verilator SUBGROUP: clang
